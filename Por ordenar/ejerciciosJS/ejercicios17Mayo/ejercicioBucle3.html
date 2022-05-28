@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const NUMERO_CUADRADOS = parseInt( prompt( 'Dime cuantos cuadrados quieres que pinte, en numero' ) )
+        var ancho = parseInt( prompt( 'Dime el ancho' ) );
+        var i = 0;
+        var contador = 0;
+        var direccion = true //true es derecha y false izquierda
+
+        while ( NUMERO_CUADRADOS > i )
+        {
+            if ( contador === 0 )
+            {
+                direccion = true
+            } else if ( contador === 4 )
+            {
+                direccion = false
+            }
+
+            var cuadrado = `<div class="figura" style="background-color:green;margin-left: ${ ancho * contador }px; width: ${ ancho }px; height:${ ancho }px; display:flex; align-items: center; justify-content: center"></div>`
+            document.write( cuadrado );
+            contador = ( direccion ) ? contador + 1 : contador - 1
+            i++
+        }
+    </script>
+</body>
+
+</html>

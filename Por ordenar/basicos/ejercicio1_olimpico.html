@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olimpico, ejercicio 1 JS</title>
+</head>
+
+<body>
+    <script>
+        //Dados 54321 segundos, quiero que calculeis cuantas horas, minutos, y segundos hay en dicha cantidad de segundos
+
+        // El ejercicio tiene que valer para la cantidad pedida y funcionar para cualquier otra cantidad
+
+        var segundosDados = 54321;
+        function calcular ( num )
+        {
+            var horasResultado = parseInt( segundosDados / 3600 );
+            var minutosResultado = parseInt( ( segundosDados - horasResultado * 3600 ) / 60 );
+            var segundosResultado = parseInt( segundosDados - ( horasResultado * 3600 + minutosResultado * 60 ) );
+            var resultado = horasResultado + ' Horas ' + minutosResultado + ' Minutos ' + segundosResultado + ' Segundos ';
+            console.log( resultado );
+        }
+        calcular( segundosDados );
+    </script>
+</body>
+
+</html>

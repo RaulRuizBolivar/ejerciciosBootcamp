@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo por listeners</title>
+    <style>
+        .cuadrado {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cuadrado"></div>
+    <script>
+        //Quiero dibujar un cuadrado por css de 100px de alto y de ancho en color negro
+        //Cuando hagamos mouseover, cambiará el color a rojo
+        //Cuando hagamos mouseout volvera a negro
+        //Cuando hagamos click sobre el cuadrado lo convertira en circulo
+        //Cuando hagamos dobole click volvera a cuadrado
+        const cuadrado = document.querySelector( '.cuadrado' )
+        cuadrado.addEventListener( 'mouseover', changeRed )
+        cuadrado.addEventListener( 'mouseout', changeBlack )
+        cuadrado.addEventListener( 'click', convertCircle )
+        cuadrado.addEventListener( 'contextmenu', convertSquare )
+        function changeRed ( e ) {
+            e.target.style.backgroundColor = 'red'
+        }
+        function changeBlack ( e ) {
+            e.target.style.backgroundColor = 'black'
+        }
+        function convertCircle ( e ) {
+            if ( e.target.style.borderRadius !== '50%' ) {
+                e.target.style.borderRadius = '50%'
+            }
+        }
+        function convertSquare ( e ) {
+            if ( e.target.style.borderRadius !== '0%' ) {
+                e.target.style.borderRadius = '0%'
+            } else {
+                alert( 'Ya soy un cuadrado' )
+            }
+        }
+
+    </script>
+</body>
+
+</html>

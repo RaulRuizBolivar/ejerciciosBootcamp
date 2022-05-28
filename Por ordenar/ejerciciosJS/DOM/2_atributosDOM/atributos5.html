@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion del DOM</title>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, culpa.</p>
+    <p>Maiores expedita molestiae quos libero quas iste, quidem cum eveniet.</p>
+    <p>Assumenda, atque ad. Omnis, minima. Perspiciatis, ipsum eligendi. Non, quae.</p>
+    <p>Totam quae harum et. Blanditiis accusamus doloribus amet nemo tempora.</p>
+    <p>Nesciunt reiciendis corporis ullam voluptates rerum ut excepturi in incidunt?</p>
+    <p>Iste corrupti reiciendis assumenda veniam quisquam odit expedita quam hic?</p>
+    <p>Quae facilis impedit aspernatur consequatur sit laborum. Aut, assumenda quam?</p>
+    <p>Reiciendis iusto aut facere aperiam minus sapiente corrupti doloremque unde.</p>
+    <p>Obcaecati dolore dolorem corrupti perspiciatis! Eligendi excepturi incidunt consequuntur iusto.</p>
+    <p>Dolor saepe adipisci voluptate explicabo cumque corporis quam illum optio?</p>
+
+    <script>
+        //Quiero que los p que hay en pantalla los elementos pares tengan fondo negro y texto blanco y los impares solo texto negro
+
+        const parrafos = document.querySelectorAll( 'p' )
+
+        function cambiarEstiloParrafos () {
+
+            let contador = 0
+            for ( let parrafo of parrafos ) {
+                if ( contador % 2 === 0 ) {
+                    parrafo.style.backgroundColor = 'black'
+                    parrafo.style.color = 'white'
+                }
+                parrafo.style.padding = '10px'
+                contador++
+            }
+        }
+        cambiarEstiloParrafos()
+    </script>
+</body>
+
+</html>

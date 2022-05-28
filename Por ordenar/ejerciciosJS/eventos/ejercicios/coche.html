@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coche</title>
+    <style>
+        .coche {
+            width: 150px;
+            transform: rotateZ(180deg);
+            transition: .2s;
+        }
+
+        .coche img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="moverX(-40)">izquierda</button>
+    <button data-velocidad="-40" class="listener">arriba</button>
+    <button data-velocidad="40" class="listener">abajo</button>
+    <button onclick="moverX(40)">derecha</button>
+    <hr>
+    <div class="coche">
+        <img src="https://www.deividart.com/libres/zycars-coche_camaro-2.png" alt="camaro">
+    </div>
+
+    <script>
+        //Izquierda y derecha con inyectados y arriba y abajo con listeners
+        const coche = document.querySelector( '.coche' )
+        const ejeY = document.querySelectorAll( '.listener' )
+        ejeY.forEach( object => object.addEventListener( 'click', moverY ) )
+        let giro = ''
+        let posicionY = 0
+        function moverX ( pixeles ) {
+            giro = ( pixeles > 0 ) ? 'rotateZ(180deg)' : 'rotateZ(0deg)'
+            coche.style.marginLeft = coche.offsetLeft + pixeles + 'px'
+            coche.style.transform = giro
+        }
+        let pixelesY = 0
+        function moverY ( e ) {
+            let velocidad = parseInt( event.target.dataset.velocidad )
+            giro = ( velocidad > 0 ) ? 'rotateZ(270deg)' : 'rotateZ(90deg)'
+            posicionY += velocidad
+            coche.style.marginTop = posicionY + 'px'
+            coche.style.transform = giro
+        }
+    </script>
+</body>
+
+</html>

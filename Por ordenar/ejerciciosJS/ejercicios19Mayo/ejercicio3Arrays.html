@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const valores = new Array( true, 5, false, 'hola', 'adios', 2, 3 )
+
+        // 1 Determinar cual de los elementos de texto es más largo
+        // 2 Realizar la suma y multiplicacion de los elementos numericos 
+
+        // 4 funciones
+        // sumar , multiplicar , textoMas largo ,filtrarpor tipo
+
+        function filtrarPorTipo ( lista, filtro )
+        {
+            const listaFiltrada = new Array()
+            for ( let item of lista )
+            {
+                if ( typeof item === filtro )
+                {
+                    listaFiltrada.push( item )
+                }
+            }
+            return listaFiltrada
+        }
+
+
+        function filtroMasLargo ( lista )
+        {
+            let elementoMasLargo = ''
+            for ( item of lista )
+            {
+                if ( item.length > elementoMasLargo.length )
+                {
+                    elementoMasLargo = item
+                }
+            }
+            return elementoMasLargo
+        }
+
+        function calcular ( lista, operacion )
+        {
+            let resultado = 0;
+            if ( operacion === 'sumar' )
+            {
+                for ( numero of lista )
+                {
+                    resultado += numero
+                }
+            }
+            if ( operacion === 'multiplicar' )
+            {
+                for ( numero of lista )
+                {
+                    resultado *= numero
+                }
+            }
+            return resultado
+        }
+
+        let listaStrings = filtrarPorTipo( valores, 'string' )
+        let listaNumeros = filtrarPorTipo( valores, 'number' )
+        let listaBoolean = filtrarPorTipo( valores, 'boolean' )
+
+        console.log( filtroMasLargo( listaStrings ) )
+        console.log( calcular( listaNumeros, 'sumar' ) )
+        console.log( calcular( listaNumeros, 'multiplicar' ) )
+    </script>
+</body>
+
+</html>

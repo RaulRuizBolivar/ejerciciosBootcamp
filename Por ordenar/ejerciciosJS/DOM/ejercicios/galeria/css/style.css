@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+.galeria .imagen{
+    position: relative;
+    margin: 20px;
+    background-position: center;
+}
+.galeria h2{
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    background-color: #ffffff80;
+    padding: 10px;
+}
+.destacado{
+    border: 3px solid red;
+}

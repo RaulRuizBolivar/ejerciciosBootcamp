@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Vamos a hacer una aplicacion que me permita calcular y sacar por pantalla el precio de venta al publico de un producto
+        //el PVP = precioCompra + IVA + margenBeneficio
+        //El IVA se calcula sobre el precio de compra y el margen
+        //El margen de beneficio es solo sobre el precioCompra
+        //La aplicacion debe tener en cuenta que el IVA puede cambiar y el margen tambien
+
+        const precioCompra = Number( prompt( "Dime a que precio compraste el articulo" ) )
+        const margenBeneficio = Number( prompt( "Dime cual es el margen de beneficio" ) )
+        const IVA = Number( prompt( "Dime cual es el IVA" ) )
+
+        function calcularPrecioVenta ( precioCompra, iva, margenBeneficio )
+        {
+            let precioConMargen = calcularPorcentajeAcumulado( precioCompra, margenBeneficio )
+            let precioVenta = calcularPorcentajeAcumulado( precioConMargen, iva )
+            return precioVenta
+        }
+        function calcularPorcentajeAcumulado ( numero, porcentaje )
+        {
+            porcentaje = numero * ( porcentaje / 100 )
+            let porcentajeAcumulado = porcentaje + numero
+            return porcentajeAcumulado
+        }
+
+        function imprimir ( precioCompra, precioVenta, margenBeneficio, iva = 21 )
+        {
+            document.write( `<table border="1"><tr><th>Precio Compra</th><th>Precio Venta</th><th>IVA</th><th>Margen de beneficio</th></tr><tr><td>${ precioCompra }</td><td>${ precioVenta }</td><td>${ iva }</td><td>${ margenBeneficio }</td></tr></table>` )
+        }
+
+
+
+
+        let precioVenta = calcularPrecioVenta( precioCompra, IVA, margenBeneficio )
+
+
+
+        imprimir( precioCompra, precioVenta, margenBeneficio, IVA )
+    </script>
+</body>
+
+</html>

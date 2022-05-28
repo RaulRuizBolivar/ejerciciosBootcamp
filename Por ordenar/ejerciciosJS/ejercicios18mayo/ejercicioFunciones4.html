@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Dado un numero cualquiera decirme si el numero es primo o no es primo
+        //Un numero es primo si solo es divisibile por él y por 1
+
+
+        function esPrimo ( numero )
+        {
+            let primo = true
+            //Vamos recorriendo de menor a mayor los posibles divisores del numero
+            for ( let i = 2; i < numero; i++ )
+            {
+                if ( numero % i === 0 )
+                {
+                    primo = false
+                    return 'el numero NO es primo'
+                }
+            }
+            return 'el numero SI es primo'
+        }
+        console.log( '5:' )
+        console.log( esPrimo( 5 ) )
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Crear una funcion que me permita pintar n cuadrados de cualquier color y cualquier ancho
+        //Pintar 10 cuadrados de 100x100 en color negro
+        //Pintar 2 cuadrados de 300x300 en color tomato
+
+        function pintarCuadrados ( ancho, numero, color = "tomato" )
+        {
+            for ( var i = 1; i <= numero; i++ )
+            {
+                document.write( `<div class="figura" style="background-color: ${ color };margin: 10px; width: ${ ancho }px; height:${ ancho }px;"></div>` )
+            }
+        }
+
+        pintarCuadrados( 100, 10, 'black' )
+        pintarCuadrados( 300, 2 )
+        pintarCuadrados( 50, 7, 'lightblue' )
+
+    </script>
+</body>
+
+</html>

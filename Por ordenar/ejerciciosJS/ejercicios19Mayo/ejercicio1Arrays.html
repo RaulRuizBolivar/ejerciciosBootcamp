@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Vamos a crear un array de numeros vacio
+        const numeros = new Array();
+
+        for ( let i = 0; i < 10; i++ )
+        {
+            numero = parseInt( ( Math.random() * 101 ) );
+            numeros[ i ] = numero;
+        }
+        console.log( numeros )
+
+
+        function filtrarDivisible3 ( lista )
+        {
+            let ul = '<ul>'
+            for ( let numero of lista )
+            {
+                if ( numero % 3 === 0 )
+                {
+                    ul += `<li>${ numero }</li>`
+                }
+            }
+            ul += '</ul>'
+            return ul
+        }
+        let divisibles3 = filtrarDivisible3( numeros )
+        document.write( divisibles3 )
+    </script>
+</body>
+
+</html>

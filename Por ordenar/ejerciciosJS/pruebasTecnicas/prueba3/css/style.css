@@ -1,0 +1,9 @@
+ul :is(.saludable , .noSaludable){
+    margin: 10px;
+}
+.saludable{
+    background-color: aquamarine;
+}
+.noSaludable{
+    background-color: lightcoral;
+}

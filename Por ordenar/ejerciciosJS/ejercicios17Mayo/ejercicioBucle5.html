@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Necesito un programa que me calcule el factorial de un numero que me de el usuario
+        var numero = parseInt( prompt( 'Dime un numero' ) )
+        var resultado = 1; // El acumulado de la multiplicacion
+
+        while ( numero >= 1 )
+        {
+            resultado *= numero
+            numero--
+        }
+        document.write( `<h1>${ resultado }</h1>` )
+    </script>
+</body>
+
+</html>

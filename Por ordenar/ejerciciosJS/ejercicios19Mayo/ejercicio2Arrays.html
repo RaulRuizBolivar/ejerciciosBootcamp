@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * Quiero que me pinteis por pantalla aquellos nombres que comiencen por a
+         * Hay que tener en cuenta que tiene que valer para cualquier letra
+        */
+
+        const listaNombres = new Array( 'Ana', 'Natalia', 'Pepe', 'Juan', 'Antonio', 'Alejandro', 'Almudena' )
+
+        function pintarFiltrados ( lista )
+        {
+            let div = '<ul>'
+            for ( unidad of lista )
+            {
+                div += `<h1>${ unidad }</h1>`
+
+            }
+            div += '</ul>'
+            document.write( div )
+        }
+
+        function filtrarLetra ( lista, letra )
+        {
+            const listaFiltrada = new Array()
+            for ( let nombre of lista )
+            {
+                if ( nombre[ 0 ].toLowerCase() === letra )
+                {
+                    listaFiltrada.push( nombre )
+                }
+            }
+            return listaFiltrada
+        }
+
+        pintarFiltrados( filtrarLetra( listaNombres, 'p' ) )
+    </script>
+</body>
+
+</html>

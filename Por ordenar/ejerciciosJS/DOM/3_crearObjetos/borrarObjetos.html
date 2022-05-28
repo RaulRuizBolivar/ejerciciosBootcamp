@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrar Objetos - Lista de la compra</title>
+</head>
+
+<body>
+    <ul class="listaCompra"></ul>
+
+
+    <script>
+        const compra = [ 'carne', 'pescado', 'leche', 'judias', 'tomates', 'pan' ]
+
+        const ulCompra = document.querySelector( '.listaCompra' )
+
+
+        let contador = 1;
+        function pintarLista ( lista, objetoDOM ) {
+            lista.forEach( cosa => {
+                pintarCosa( cosa, objetoDOM )
+            }
+            )
+        }
+        function pintarCosa ( cosa, objetoDOM ) {
+            let li = document.createElement( 'li' )
+            li.innerText = cosa
+            li.setAttribute( 'id', `cosa_${ contador }` )
+            ulCompra.appendChild( li )
+            contador++
+        }
+
+        pintarLista( compra, ulCompra )
+
+        //Borrar un objeto del DOM, es borrar la etiqueta con todo su contenido, incluidas las etiquetas que cuelgan de ella
+
+        function borrarElementDOM ( num ) {
+            const cosaBorrada = document.querySelector( '#cosa_' + num )
+            cosaBorrada.parentNode.removeChild( cosaBorrada )
+            return cosaBorrada.innerText
+        }
+    </script>
+</body>
+
+</html>

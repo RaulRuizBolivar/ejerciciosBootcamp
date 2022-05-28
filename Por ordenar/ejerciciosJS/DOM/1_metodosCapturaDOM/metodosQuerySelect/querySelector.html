@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query selectos</title>
+</head>
+
+<body>
+    <span>Hola</span>
+    <ul class="menu">
+        <li><a href="#">Item 1</a></li>
+        <li><a href="#">Item 2</a></li>
+        <li><a href="#">Item 3</a></li>
+    </ul>
+    <div class="menu"></div>
+    <div id="cuadrado"></div>
+
+
+
+    <script>
+        /*
+        querySelector me permite capturar cualquier elemento de DOM en una variable JS
+        El metodo de seleccion de dicho objeto es similar al que utilizamos en herencia en CSS
+        */
+
+
+        //Quiero capturar todos los a del menu y cambiar su texto
+
+        //querySelector y querySelectorAll selecciona elñ primer elemento que cumple con la condicion marcada usando nomeclatura css
+
+        let enlace = document.querySelector( '.menu li:nth-child(3) a' )
+        enlace.innerText = 'Este es el tercero'
+    </script>
+</body>
+
+</html>

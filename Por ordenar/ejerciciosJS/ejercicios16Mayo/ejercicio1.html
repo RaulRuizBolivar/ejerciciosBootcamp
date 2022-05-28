@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <script>
+        const EDAD_MINIMA = 18;
+        const edad = parseInt( prompt( 'Dime tu edad, chaval!' ) )
+        const nombre = prompt( 'Y tu nombre es...' ).toLocaleLowerCase()
+        const VIP = 'jony'
+        var mensaje = ''
+
+        if ( edad >= EDAD_MINIMA )
+        {
+            mensaje = 'Anda pasa xD'
+        } else if ( edad < EDAD_MINIMA && edad > 0 )
+        {
+            mensaje = ' pa\' tu casa a ver Pocoyó'
+        } else
+        {
+            mensaje = 'Los parametros no son correctos'
+        }
+
+        if ( nombre === VIP )
+        {
+            mensaje = 'Anda y vete a hacer el precurso que te vas a comer los mocos <br> * Le golpea *'
+        }
+        document.write( `<h1>${ mensaje }</h1>` )
+    </script>
+</body>
+
+</html>

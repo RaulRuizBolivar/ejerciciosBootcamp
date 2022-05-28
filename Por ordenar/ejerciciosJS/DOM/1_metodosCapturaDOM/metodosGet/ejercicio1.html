@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <header>
+        <ul></ul>
+    </header>
+    <footer>
+        <ul></ul>
+    </footer>
+
+    <script>
+
+        const menuPrincipal = new Array( 'home', 'servicios', 'contacto' )
+        const menuLegal = new Array( 'privacidad', 'cookies' )
+
+        //Pintar Cada listado dentro de su zona correspondiente
+        //Hay que pintar cada lo con si enlace
+        //MenuPrincipal dentro de Header, menuLegal dentro del Footer
+
+        //Capturar los elementos que vais a rellenar
+
+        const uls = document.getElementsByTagName( 'ul' )
+
+        const ulMenuPrincipal = uls[ 0 ]
+        const ulMenuLegal = uls[ 1 ]
+
+
+        const llenarUl = ( ul, arrayDatos ) => {
+            for ( dato of arrayDatos ) {
+                ul.innerHTML += `<li> <a href="${ dato.toLowerCase() }.html">${ dato }</a></li>`
+            }
+        }
+
+        llenarUl( ulMenuLegal, menuLegal )
+        llenarUl( ulMenuPrincipal, menuPrincipal )
+
+
+    </script>
+</body>
+
+</html>

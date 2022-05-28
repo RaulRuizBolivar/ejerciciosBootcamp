@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Quiero pintar n cuadrados, siendo n un numero pedido por pantalla
+        // Cada cuadrado tendra dentro de si mismo un numero que corresponde a su posicion
+        // Quiero que los cuadrados con numero par sean verdes y los pares rojos
+        const NUMERO_CUADRADOS = parseInt( prompt( 'Dime cuantos cuadrados quieres que pinte, en numero' ) )
+        var color = '';
+        for ( var i = 1; i <= NUMERO_CUADRADOS; i++ )
+        {
+            color = ( i % 2 === 0 ) ? 'tomato' : 'gold';
+            document.write( `<div class="figura" style="background-color: ${ color };margin: 10px; width: 100px; height:100px; display:flex; align-items: center; justify-content: center">${ i }</div>` )
+        }
+
+
+    </script>
+</body>
+
+</html>

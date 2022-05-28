@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <figure>
+        <img src="images/imagen1.jpg">
+    </figure>
+
+    <script>
+        //Capturamos la imagen
+        const imagen = document.querySelector( 'figure img' )
+
+        //Crear un metodo que reciba el numero de la imagen y modifique el valor del src
+        let numeroImagen = 1
+        const changeImage = numberImage => {
+            imagen.src = `./images/imagen${ numberImage }.jpg`
+        }
+        const intervalo = setInterval( () => {
+            numeroImagen = ( numeroImagen < 3 ) ? numeroImagen + 1 : 1
+            changeImage( numeroImagen )
+        }, 1000 )
+
+        function pararCarrusel () {
+            clearInterval( intervalo )
+        }
+    </script>
+</body>
+
+</html>

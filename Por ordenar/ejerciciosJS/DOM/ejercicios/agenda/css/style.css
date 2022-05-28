@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+img{
+    display: block;
+    width: 100%;
+    height: auto
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.contact{
+    display: flex;
+    flex-wrap: wrap;
+}
+.contact h2 , hr{
+    width: 100%;
+}
+.contact article{
+    margin: 10px;
+    width: calc(33.333% - 20px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px #aaa;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <h1>Ejercicio 2</h1>
+    <script>
+        const regular = prompt( 'Quieres que la figura sea regular?' ).toLocaleLowerCase()
+        const colorUsuario = prompt( 'Dime un color (rojo , verde , azul o morado)' ).toLocaleLowerCase()
+        const redondoUsuario = prompt( 'Quieres que la figura esté redondeada?' ).toLocaleLowerCase()
+        var ancho, alto, colorFigura, redondo = '';
+
+
+        redondo = ( redondoUsuario === 'si' ) ? '50%' : '0%'
+
+        ancho = parseInt( prompt( 'Dime un ancho' ) )
+        alto = ( regular !== 'si' ) ? parseInt( prompt( 'Dime un alto' ) ) : alto = ancho
+
+        if ( isNaN( parseInt( ancho ) ) )
+        {
+            alert( 'Ancho no especificado en numero, por defecto serán 200px' )
+            ancho = '200'
+        }
+        if ( isNaN( parseInt( alto ) ) )
+        {
+            alert( 'Alto no especificado en numero, por defecto serán 200px' )
+            alto = '200'
+        }
+
+        switch ( colorUsuario )
+        {
+            case 'rojo':
+                colorFigura = 'red'
+                break
+            case 'verde':
+                colorFigura = 'green'
+                break
+            case 'azul':
+                colorFigura = 'blue'
+                break
+            case 'morado':
+                colorFigura = 'violet'
+                break
+            default:
+                colorFigura = colorUsuario
+        }
+
+        document.write( `<div class="figura" style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ alto }px; border-radius:${ redondo };"></div>'` )
+        /*
+        switch ( figura )
+        {
+            case 'cuadrado':
+                document.write( `<div style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ ancho }px"></div>'` )
+                break
+            case 'rectangulo':
+                document.write( `<div style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ alto }px"></div>'` )
+                break
+            case 'circulo':
+                document.write( `<div style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ ancho }px; border-radius:50%;"></div>'` )
+                break
+            case 'elipse':
+                document.write( `<div style="background-color: ${ colorFigura }; width: ${ ancho }px; height:${ alto }px; border-radius:50%;"></div>'` )
+                break
+            default:
+                document.write( '<h1>Escribeme algo que tenga sentido</h1>' )
+        }
+        */
+    </script>
+</body>
+
+</html>

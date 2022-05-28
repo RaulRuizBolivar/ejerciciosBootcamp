@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear objetos</title>
+</head>
+
+<body>
+    <section id="frases">
+        <!--
+        <article>
+            <h3>Solo sé que no se nada</h3>
+            <p>Autor: Descartes</p>
+            <hr>
+        </article>
+        -->
+    </section>
+    <script>
+        const frases = [
+            {
+                id: 1,
+                frase: 'Solo sé que no sé nada',
+                autor: 'Descartes'
+            },
+            {
+                id: 2,
+                frase: 'Yo no pertenecería a ningún club que me admitiera como socio',
+                autor: 'Marx'
+            },
+            {
+                id: 3,
+                frase: 'Eres un fistro pecadorrrr de la pradera',
+                autor: 'Chiquito de la calzada'
+            }
+        ]
+
+        //Capturamos aquellos elementos con los que vamos a interactuar
+        const sectionFrases = document.querySelector( '#frases' )
+        //Pintar las frases, es lo de siempre, recorrer el listado y pintar frase a frase
+        const pintarFrases = ( listaFrases, elementoDOM ) => listaFrases.forEach( frase => pintarUnaFrase( frase, elementoDOM ) )
+
+        const pintarUnaFrase = ( frase, elementoDOM ) => {
+            //crear los nodos de etiquetas --> etiquetas HTML
+            //A la hora de crear los elementos, el orden no es importante, no se van a colocar aun en ningun sitio
+            let article = document.createElement( 'article' )
+            let p = document.createElement( 'p' )
+            let h3 = document.createElement( 'h3' )
+            let hr = document.createElement( 'hr' )
+
+
+            article.setAttribute( 'id', `frase_${ frase.id }` )
+            //Contenido
+            let contentH3 = document.createTextNode( frase.frase )
+            let contentP = document.createTextNode( `Autor: ${ frase.autor }` )
+
+            //Tiro el contenido dentro de las etiquetas
+            //Aqui si que es importante el orden, porque aqui ya estoy colocando los elementos
+            h3.appendChild( contentH3 )
+            p.appendChild( contentP )
+            article.appendChild( h3 )
+            article.appendChild( p )
+            article.appendChild( hr )
+
+
+            //Añadimos la maquetacion al elemento del DOM que queremos introducir
+            elementoDOM.appendChild( article )
+        }
+
+
+        pintarFrases( frases, sectionFrases )
+    </script>
+</body>
+
+</html>

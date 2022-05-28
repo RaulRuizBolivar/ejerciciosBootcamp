@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Stock</title>
+</head>
+
+<body>
+    <script>
+        //Necesito una aplicacion que me permita controlar el stock de mi tienda de paraguas negros.
+        //Para ello necesito saber:
+        //Cuanto stock tengo
+        //Necesito poder añadir paraguas a mi stock
+        //Que se puede comprar producto
+        //Que si tengo menos de 5 paraguas, me avise  de que tengo que comprar paraguas
+
+
+        //Un elemento que me permita almacenar cantidad de paraguas
+        let stock = 125;
+        //Necesito saber cuanto stock tengo
+        const showStock = () => console.log( `Your stock is ${ stock }` )
+        //funcion que me permita añadir stock a mi tienda, esta funcion me devolvera la cantidad de paraguas finales despues de añadir stock
+        const addProduct = cantidadCompra =>
+        {
+            stock += cantidadCompra;
+            showStock()
+        }
+
+        //Vamos a hacer una funcion que le permita a un usuario comprar n Paraguas, puede comprar los paraguas que quiera siempre que tengamos stock
+        const buyProduct = quantity =>
+        {
+            if ( quantity > stock )
+            {
+                return `No such stock, you can only buy ${ stock }`
+            }
+            stock -= quantity
+            stockCheck()
+            showStock()
+        }
+
+        //Necesito algo que me notifique cuando mi stock sea de 5 o menos, no solo hay que crear la accion, sino saber donde se debe ejecutar
+
+        const stockCheck = () =>
+        {
+            const minStock = 5
+            if ( stock <= minStock )
+            {
+                console.log( `Attention! Your stock is too low (${ stock })` )
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+figure{
+    margin: 40px auto;
+    width: 500px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.cuadrado{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 30px;
+}

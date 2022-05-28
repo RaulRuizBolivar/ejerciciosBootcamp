@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Multidimensional de JSON</title>
+</head>
+
+<body>
+    <!--
+    <article>
+        <h3>id - Nombre</h3>
+        <ul>
+            <li>Edad: 40</li>
+            <li>Nota: 10</li>
+        </ul>
+        <hr>
+    </article>
+    -->
+    <script>
+
+
+
+        const listaAlumnos = new Array(
+            {
+                id: 1,
+                nombre: 'Juan Antonio',
+                edad: 40,
+                notaMedia: 10
+            },
+            {
+                id: 2,
+                nombre: 'Dani',
+                edad: 25,
+                notaMedia: 6
+            },
+            {
+                id: 3,
+                nombre: 'Pedro',
+                edad: 26,
+                notaMedia: 5
+            },
+            {
+                id: 4,
+                nombre: 'Lolo',
+                edad: 27,
+                notaMedia: 4.5
+            },
+            {
+                id: 5,
+                nombre: 'Jorge',
+                edad: 22,
+                notaMedia: 1
+            }
+
+
+        )
+
+
+
+        /**
+         * Quiero pintar lista alumnos, que me imprima los datos de la lista con la estructura comentada en el documento
+        */
+
+
+
+
+
+
+
+
+        const pintarTodosAlumno = ( listaAlumnos ) =>
+        {
+            for ( let alumno of listaAlumnos )
+            {
+                pintarUnAlumno( alumno )
+            }
+        }
+        const filtrarPorNota = ( listaAlumnos, notaMinima, notaMaxima ) =>
+        {
+            const listaFiltrada = new Array();
+            for ( let alumno of listaAlumnos )
+            {
+                if ( alumno.notaMedia >= notaMinima && alumno.notaMedia <= notaMaxima )
+                {
+                    listaFiltrada.push( alumno );
+                }
+            }
+            return listaFiltrada
+        }
+
+        const pintarUnAlumno = ( objetoAlumno ) =>
+        {
+            let article = '<article>';
+            article += `<h3>${ objetoAlumno.id } - ${ objetoAlumno.nombre }</h3>`
+            article += `<ul><li>Edad: ${ objetoAlumno.edad }</li><li>Nota: ${ objetoAlumno.notaMedia }</li></ul>`
+            article += `<hr>`
+            article += '</article>'
+            document.write( article )
+        }
+
+        let listaAprobados = filtrarPorNota( listaAlumnos, 5, 10 )
+        pintarTodosAlumno( listaAprobados )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

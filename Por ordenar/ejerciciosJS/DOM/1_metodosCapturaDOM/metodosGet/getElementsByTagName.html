@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document.getElementsByTagName</title>
+</head>
+
+<body>
+    <p class="juan"><strong>Juan</strong></p>
+    <p>Pepe</p>
+    <p>Carlos</p>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto inventore impedit expedita enim ipsa omnis
+            iure at laboriosam hic numquam laudantium maiores voluptatum earum repudiandae corrupti, ea libero natus
+            tenetur.</p>
+    </div>
+    <section>
+        <article>
+            <p>Hola</p>
+        </article>
+    </section>
+
+    <script>
+        const parrafos = document.getElementsByTagName( 'p' )
+        console.log( parrafos ) //Obtengo un HTMLColection
+        console.log( parrafos[ 0 ] ) //El primer parrafo por posicion
+
+        //Como modifico el contenido de un elemento del DOM
+
+        //innerText modifica o lee solo texto
+        parrafos[ 1 ].innerText = 'Hola k ase'
+        //innerHTML modifica y lee estructuras HTML
+        parrafos[ 0 ].innerHTML = '<strong>Jose Luis</strong>'
+
+    </script>
+</body>
+
+</html>
