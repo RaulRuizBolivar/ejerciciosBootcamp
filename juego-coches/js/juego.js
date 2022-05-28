@@ -54,11 +54,12 @@ const terminarJuego = vehiculo => {
     clearInterval( arrancarPorche )
     document.removeEventListener( 'keydown', capturarTeclas )
     btnEmpezarJuego.innerText = 'Restart'
-    setTimeout( botonReiniciar, 1000 )
+    setTimeout( () => btnEmpezarJuego.addEventListener( 'click', restart ), 1000 )
 }
 
 const empezarJuego = () => {
     btnEmpezarJuego.removeEventListener( 'click', empezarJuego )
+    btnEmpezarJuego.innerText = 'Carrera en curso'
     document.addEventListener( 'keydown', capturarTeclas )
     arrancarLambo = setInterval( moverLambo, 200 )
     arrancarPorche = setInterval( moverPorche, 175 )
@@ -74,12 +75,6 @@ const restart = () => {
     avanceLambo = 0
     avancePorche = 0
     nitros = 3
-    setTimeout( botonEmpezar, 1000 )
-}
-function botonReiniciar () {
-    btnEmpezarJuego.addEventListener( 'click', restart )
-}
-function botonEmpezar () {
-    btnEmpezarJuego.addEventListener( 'click', empezarJuego )
+    setTimeout( () => btnEmpezarJuego.addEventListener( 'click', empezarJuego ), 1000 )
 }
 btnEmpezarJuego.addEventListener( 'click', empezarJuego )
