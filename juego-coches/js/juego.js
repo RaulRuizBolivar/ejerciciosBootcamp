@@ -5,6 +5,8 @@ let porche = document.querySelector( '#porche' )
 let meta = document.querySelector( '.meta' )
 let mensaje = document.querySelector( '#mensaje' )
 let btnEmpezarJuego = document.querySelector( 'button' )
+let arrancarLambo
+let arrancarPorche
 let carreraEmpezada = false
 let nitros = 3
 let largoCarrera = 675
@@ -54,6 +56,9 @@ const terminarJuego = vehiculo => {
     clearInterval( arrancarPorche )
     document.removeEventListener( 'keydown', capturarTeclas )
 }
-document.addEventListener( 'keydown', capturarTeclas )
-let arrancarLambo = setInterval( moverLambo, 200 )
-let arrancarPorche = setInterval( moverPorche, 175 )
+
+const empezarJuego = () => {
+    document.addEventListener( 'keydown', capturarTeclas )
+    arrancarLambo = setInterval( moverLambo, 200 )
+    arrancarPorche = setInterval( moverPorche, 175 )
+}
