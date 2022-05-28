@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+img{
+    display: block;
+    width: 100%;
+    height: auto
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.15em;
+}
+.tabs{
+    margin: 0 auto;
+    max-width: 800px;
+}
+.tabs .menu{
+    list-style: none;
+    display: flex;
+}
+.tabs .menu li{
+    width: 100%;
+}
+.tabs .menu a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 20px;
+    background-color: grey;
+    color: white;
+    transition: .5s;
+}
+.tabs .menu :is(a:hover, .activo){
+    background-color: lightsteelblue;
+    color: black;
+}
+.tabs .contenedor{
+    padding: 20px;
+    border: 1px solid grey;
+    line-height: 1.45em;
+}
+#contact , #studies{
+    display: none;
+}

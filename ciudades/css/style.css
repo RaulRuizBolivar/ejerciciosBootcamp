@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+img{
+    display: block;
+    width: 100%;
+    height: auto
+}
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+header{
+    width: 30%;
+    background-color: aliceblue;
+    height: 100vh;
+}
+main{
+    width: 70%;
+    min-height: 100vh;
+    border-left: 1px solid gray;
+    background-color: lavenderblush;
+}
+button{
+    padding: 10px;
+    border: none;
+    background-color:lightblue;
+    color: rgba(0,0,0,.8);
+    display: block;
+    margin: 10px auto;
+}
+.ciudades{
+    margin-top: 20px;
+    list-style: none;
+}
+.ciudades li{
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    background-color: ghostwhite;
+    text-align: center;
+}

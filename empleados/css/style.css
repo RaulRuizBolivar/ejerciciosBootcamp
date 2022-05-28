@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+img{
+    display: block;
+    width: 100%;
+    height: auto
+}
+.sueldoIlegal{
+    background-color: lightcoral;
+}
+.sueldoLegal{
+    background-color: lightgreen;
+}
+#addEmployee{
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+#addEmployee h2{
+    margin-bottom: 10px;
+    width:100%;
+}
+#addEmployee :is(input , hr){
+    width: 100%;
+    margin-bottom: 10px;
+}
+#addEmployee input{
+    padding: 5px;
+}
