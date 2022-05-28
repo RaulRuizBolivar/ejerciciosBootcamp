@@ -26,13 +26,11 @@ btnAlfabetico.addEventListener( 'click', ordenarAZ )
 
 function ordenarAZ () {
     let listaOrdenada = []
-    if ( ordenAZ ) {
-        listaOrdenada = ciudades.sort( ( actual, siguiente ) => { return actual.nombre > siguiente.nombre } )
-        ordenAZ = false
-    } else {
-        listaOrdenada = ciudades.sort( ( actual, siguiente ) => { return actual.nombre < siguiente.nombre } )
-        ordenAZ = true
+    listaOrdenada = ciudades.sort( ( actual, siguiente ) => { return actual.nombre.toLowerCase() > siguiente.nombre.toLowerCase() } )
+    if ( !ordenAZ ) {
+        listaOrdenada.reverse()
     }
+    ordenAZ = !ordenAZ
     console.log( listaOrdenada )
     pintarCiudades( listaOrdenada, ulCiudades )
 }
