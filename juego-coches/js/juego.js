@@ -2,33 +2,33 @@ let monza = document.querySelector( '.monza' )
 let ferrari = document.querySelector( '#ferrari' )
 let lambo = document.querySelector( '#lamborghini' )
 let porche = document.querySelector( '#porche' )
-let carriles = document.querySelectorAll( '.carril' )
 let meta = document.querySelector( '.meta' )
 let mensaje = document.querySelector( '#mensaje' )
 let btnEmpezarJuego = document.querySelector( 'button' )
 let carreraEmpezada = false
 let nitros = 3
 let largoCarrera = 675
-
+let avanceLambo = 0
+let avancePorche = 0
+let avanceFerrari = 0
 
 const moverFerrari = velocidad => {
-    ferrari.style.marginLeft = velocidad + ferrari.offsetLeft + 'px'
+    avanceFerrari += velocidad
+    ferrari.style.marginLeft = avanceFerrari + 'px'
     if ( ferrari.offsetLeft > largoCarrera ) {
         terminarJuego( ferrari )
     }
 }
 const moverLambo = () => {
-    //let velocidadLambo = Math.ceil( Math.random() * 50 )
     avanceLambo += Math.ceil( Math.random() * 50 )
-    lambo.style.marginLeft
-    console.log( lambo.style.marginLeft )
-    if ( lambo.offsetLeft > largoCarrera ) {
+    lambo.style.marginLeft = avanceLambo + 'px'
+    if ( avanceLambo > largoCarrera ) {
         terminarJuego( lambo )
     }
 }
 const moverPorche = () => {
-    let velocidadPorche = Math.ceil( Math.random() * 50 )
-    porche.style.marginLeft = velocidadPorche + porche.offsetLeft + 'px'
+    avancePorche += Math.ceil( Math.random() * 50 )
+    porche.style.marginLeft = avancePorche + 'px'
     if ( porche.offsetLeft > largoCarrera ) {
         terminarJuego( porche )
     }
@@ -48,6 +48,12 @@ const capturarTeclas = event => {
 
 }
 
-
+const terminarJuego = vehiculo => {
+    mensaje.innerText = `${ vehiculo.innerText } ha ganado la carrera`
+    clearInterval( arrancarLambo )
+    clearInterval( arrancarPorche )
+    document.removeEventListener( 'keydown', capturarTeclas )
+}
 document.addEventListener( 'keydown', capturarTeclas )
-
+let arrancarLambo = setInterval( moverLambo, 200 )
+let arrancarPorche = setInterval( moverPorche, 175 )
