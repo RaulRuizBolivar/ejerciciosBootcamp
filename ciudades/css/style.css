@@ -23,6 +23,9 @@ main{
     border-left: 1px solid gray;
     background-color: lavenderblush;
 }
+main .mapa{
+    height: 100vh;
+}
 button{
     padding: 10px;
     border: none;

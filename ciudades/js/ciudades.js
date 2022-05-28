@@ -1,26 +1,32 @@
 const ciudades = [
     {
         nombre: 'Madrid',
-        habitantes: 5000000
+        habitantes: 5000000,
+        mapa: '!1m18!1m12!1m3!1d194347.38561671326!2d-3.819959260630861!3d40.43813066239152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e0!3m2!1ses!2ses!4v1653735580901!5m2!1ses!2ses'
     },
     {
         nombre: 'Sevilla',
-        habitantes: 2000000
+        habitantes: 2000000,
+        mapa: '!1m18!1m12!1m3!1d101459.40852657857!2d-6.025268686962826!3d37.375486415010016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c1114be6291%3A0x34f018621cfe5648!2sSevilla!5e0!3m2!1ses!2ses!4v1653735614395!5m2!1ses!2ses'
     },
     {
         nombre: 'Malaga',
-        habitantes: 1500000
+        habitantes: 1500000,
+        mapa: '!1m18!1m12!1m3!1d102341.62549850416!2d-4.519477342644114!3d36.7183389864164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7259c44fdb212d%3A0x6025dc92c9ca32cf!2zTcOhbGFnYQ!5e0!3m2!1ses!2ses!4v1653735638525!5m2!1ses!2ses'
     },
     {
         nombre: 'Barcelona',
-        habitantes: 4500000
+        habitantes: 4500000,
+        mapa: '!1m18!1m12!1m3!1d95780.4660090927!2d2.069978700486052!3d41.39277539235548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f47660a!2sBarcelona!5e0!3m2!1ses!2ses!4v1653735667561!5m2!1ses!2ses'
     },
     {
         nombre: 'Algeciras',
-        habitantes: 125000
+        habitantes: 125000,
+        mapa: '!1m18!1m12!1m3!1d25779.668588448327!2d-5.475406834855245!3d36.13104623119472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0c9496ba5d5751%3A0xa626ca859cd81ce9!2sAlgeciras%2C%20C%C3%A1diz!5e0!3m2!1ses!2ses!4v1653735522439!5m2!1ses!2ses'
     },
     {
         nombre: 'Alicante',
-        habitantes: 1200000
+        habitantes: 1200000,
+        mapa: '!1m18!1m12!1m3!1d100115.59376058358!2d-0.5427345782329364!3d38.35795447640639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6235da3b9dab4b%3A0x1d7da872ac0b81e3!2sAlicante%20(Alacant)%2C%20Alicante!5e0!3m2!1ses!2ses!4v1653735693565!5m2!1ses!2ses'
     }
 ]

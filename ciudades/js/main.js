@@ -12,6 +12,8 @@ function pintarCiudades ( lista, dom ) {
 function pintarUnaCiudad ( ciudad, dom ) {
     let li = document.createElement( 'li' )
     li.innerText = `${ ciudad.nombre } - ${ ciudad.habitantes } habitantes`
+    li.dataset.mapa = ciudad.mapa
+    li.addEventListener( 'click', cambiarMapa )
     dom.appendChild( li )
 }
 
@@ -50,4 +52,14 @@ function ordenarNumericamente () {
     }
     ordenNum = !ordenNum
     pintarCiudades( listaOrdenada, ulCiudades )
+}
+
+
+// Cambiar el foco del mapa
+
+let mapa = document.querySelector( 'iframe' )
+
+
+function cambiarMapa ( event ) {
+    mapa.src += event.target.dataset.mapa
 }
