@@ -7,7 +7,6 @@ let mensaje = document.querySelector( '#mensaje' )
 let btnEmpezarJuego = document.querySelector( 'button' )
 let arrancarLambo
 let arrancarPorche
-let carreraEmpezada = false
 let nitros = 3
 let largoCarrera = 675
 let avanceLambo = 0
@@ -47,7 +46,6 @@ const capturarTeclas = event => {
             }
             break
     }
-
 }
 
 const terminarJuego = vehiculo => {
@@ -55,6 +53,8 @@ const terminarJuego = vehiculo => {
     clearInterval( arrancarLambo )
     clearInterval( arrancarPorche )
     document.removeEventListener( 'keydown', capturarTeclas )
+    btnEmpezarJuego.innerText = 'Restart'
+    setTimeout( botonReiniciar, 1000 )
 }
 
 const empezarJuego = () => {
@@ -64,4 +64,22 @@ const empezarJuego = () => {
     arrancarPorche = setInterval( moverPorche, 175 )
 }
 
+const restart = () => {
+    btnEmpezarJuego.removeEventListener( 'click', restart )
+    btnEmpezarJuego.innerText = 'Empezar Juego'
+    ferrari.style.marginLeft = 0
+    lambo.style.marginLeft = 0
+    porche.style.marginLeft = 0
+    avanceFerrari = 0
+    avanceLambo = 0
+    avancePorche = 0
+    nitros = 3
+    setTimeout( botonEmpezar, 1000 )
+}
+function botonReiniciar () {
+    btnEmpezarJuego.addEventListener( 'click', restart )
+}
+function botonEmpezar () {
+    btnEmpezarJuego.addEventListener( 'click', empezarJuego )
+}
 btnEmpezarJuego.addEventListener( 'click', empezarJuego )
