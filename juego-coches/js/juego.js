@@ -58,7 +58,10 @@ const terminarJuego = vehiculo => {
 }
 
 const empezarJuego = () => {
+    btnEmpezarJuego.removeEventListener( 'click', empezarJuego )
     document.addEventListener( 'keydown', capturarTeclas )
     arrancarLambo = setInterval( moverLambo, 200 )
     arrancarPorche = setInterval( moverPorche, 175 )
 }
+
+btnEmpezarJuego.addEventListener( 'click', empezarJuego )
