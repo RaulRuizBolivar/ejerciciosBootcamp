@@ -66,6 +66,9 @@ footer{
 }
 
 /* inicio de main */
+main{
+    position: relative;
+}
 
 main section{
     margin-top: -30px;
@@ -127,6 +130,36 @@ main section article:hover h3{
 
 main section article:hover h4{
     left: 0px;
+}
+main .modal {
+    position: absolute;
+    transition: 1s;
+    top: -1000px;
+}
+main .modal.activo {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transition: 1s;
+}
+main .modal .velo{
+    position: absolute;
+    height: 95.5%;
+    width: 100%;
+    background-color: #00000090;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition:1s;
+}
+main .modal img{
+    position: absolute;
+}
+main .modal i{
+    color: tomato;
+    width: 100px;
 }
 
 @media(min-width: 768px) {
