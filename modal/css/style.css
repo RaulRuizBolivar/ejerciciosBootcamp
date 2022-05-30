@@ -133,17 +133,17 @@ main section article:hover h4{
     left: 0px;
 }
 main .modal {
-    position: absolute;
+    position: fixed;
     transition: 1s;
-    top: -4000px;
-    left: 5%;
+    top: -1000px;
+    left: 20%;
     background-color: white;
     box-shadow: 1px 1px 1000px black;
     z-index: 1;
-    width: 90%;
+    width: 60%;
 }
 main .modal.activo {
-    top: 5%;
+    top: 10%;
     transition: 1s;
 }
 main .modal img{
