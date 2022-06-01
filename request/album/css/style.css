@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+img{
+    display: block;
+    width: 100%;
+    height: auto
+}
+#album{
+    display: flex;
+    flex-wrap: wrap;
+}
+#album figure{
+    width: calc(20% - 20px);
+    margin: 10px;
+    text-align: center;
+}

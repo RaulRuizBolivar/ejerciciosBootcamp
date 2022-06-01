@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodo Fetch</title>
+</head>
+
+<body>
+    <script>
+        const url = 'https://jsonplaceholder.typicode.com/users';
+
+        //Opcion 1 --> fetch , gestionado por then catch
+
+        fetch( url, { method: 'get' } )
+            .then( ( response ) => {
+                response.json()
+                    .then( response => {
+                        console.log( response )
+                    } )
+            } )
+            .catch( error => console.log( error ) )
+
+
+        //Opcion 2 --> async await
+        async function cargarDatos () {
+            //fetch es una promesa que me permite hacer peticiones asincronas a servicios HTTP externos
+            let respuesta = await fetch( url, { method: 'get' } )
+            let result = await respuesta.json()
+            console.log( result )
+        }
+        cargarDatos()
+    </script>
+</body>
+
+</html>
