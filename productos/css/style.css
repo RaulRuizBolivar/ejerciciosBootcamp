@@ -1,69 +1,144 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
 }
-img{
-    display: block;
-    width: 100%;
-    height: auto
-}
+
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: azure;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(232, 232, 232);
 }
+
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 header{
-    padding: 10px;
-    background-color: cornsilk;
+    padding: 20px;
+    background-color: #444;
+    border-bottom: 4px solid tomato;
+    color: white;
+    box-shadow: 1px 1px 10px #aaa;
     display: flex;
     justify-content: space-between;
 }
-header button{
 
-}
-main h1{
+header .carrito{
+    display: block;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
     text-align: center;
-    font-size: 400%;
+    border: 2px solid tomato;
+    cursor: pointer;
+    text-decoration: none;
 }
-#productos{
+
+header .carrito p{
+    font-size: 80%;
+}
+
+main{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
-.producto{
-    margin: 20px;
-    padding: 20px;
-    background-color: cornsilk;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px black;
-    width: calc(25% - 40px);
-    text-align: center;
+header h1 a{
+    color: white;
+    text-decoration: none;
 }
-.producto h2{
-    padding-bottom: 10px;
+
+aside{
+    padding: 10px;
 }
-.producto p{
-    padding-bottom: 10px;
-}
-.producto button{
+aside select{
     width: 100%;
     padding: 10px;
-    background-color: aquamarine;
-    border-radius: 5px;
+    background-color: rgb(76, 76, 76);
+    color: white;
+    border: 0px;
+}
+main section.carrito ul{
+    list-style: none;
+}
+main section.carrito ul li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-top: 1px solid #aaa;
+}
+main section.carrito ul img{
+    width: 40px;
+    margin-right: 10px;
+}
+main section.carrito .btn{
+    padding: 10px;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: rgb(76, 76, 76);
+    color: white;
+    border: 0px;
+    transition: .2s;
+}
+main section.carrito .btn:hover{
+    background-color: lightgray;
+    color: black;
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+    padding: 10px;
+    background-color: #444;
+    width: 100%;
+    color: white;
+}
+
+section{
+    padding: 20px;
+}
+
+section .flex{
+    padding:20px 10px;
+}
+section .flex article{
+    background-color: white;
+    box-shadow: 1px 1px 10px #aaa;
+    padding: 10px;
+    border: 1px solid #aaa;
     margin-bottom: 10px;
 }
-.producto div{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+
+section .flex article button{
+    padding: 5px;
+    background-color: tomato;
+    border: 0px;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
-@media(max-width: 900px){
-    .producto{
-        width: calc(50% - 40px);
-    }
+section .flex article button:hover{
+    background-color: brown;
+    color: white;
 }
-@media(max-width: 768px){
-    .producto{
-        width: calc(100% - 40px);
+
+@media(min-width: 768px){
+   section .flex{
+       display: flex;
+       flex-wrap: wrap;
+   }
+
+    section .flex article{
+        padding: 10px;
+        border: 1px solid #aaa;
+        margin: 10px;
+        width: calc(25% - 20px);
     }
 }

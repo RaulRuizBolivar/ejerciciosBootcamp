@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+img{
+    display: block;
+    width: 100%;
+    height: auto
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background-color: lightblue;
+    box-shadow: 1px 1px 10px lightblue;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.wrapper{
+    margin: 0 auto;
+    max-width: 1100px;
+}
+input{
+    border: 3px solid #04578a;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+}
+section#memes{
+    column-count: 4;
+    column-gap: 20px;
+}
+#memes article{
+    background-color: azure;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px lightgray;
+}

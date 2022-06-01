@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cooky</title>
+</head>
+
+<body>
+    <h1>Ducatti</h1>
+    <h2>Monster</h2>
+    <button id="btn">Acepto Cookies</button>
+    <button id="btn2">Leer Cookies</button>
+
+    <script>
+        const btnAcept = document.querySelector( '#btn' )
+        const btnRead = document.querySelector( '#btn2' )
+
+        btnAcept.addEventListener( 'click', guardarCookies )
+        btnRead.addEventListener( 'click', leerCookies )
+
+        function leerCookies () {
+            let cookies = document.cookie
+            let listaCookies = cookies.split( '; ' )
+            console.log( listaCookies )
+
+            let tipo = listaCookies.find( cookie => cookie.includes( 'tipo' ) )
+            console.log( tipo )
+        }
+
+        function guardarCookies ( event ) {
+            let marca = document.querySelector( 'h1' ).innerText
+            let producto = document.querySelector( 'h2' ).innerText
+
+            document.cookie = 'marca=' + marca
+            document.cookie = 'producto=' + producto
+            document.cookie = 'tipo=naked'
+        }
+    </script>
+
+</body>
+
+</html>

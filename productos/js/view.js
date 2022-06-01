@@ -1,54 +1,64 @@
-const sectionProductos = document.querySelector( '#productos' )
-const selectFiltro = document.querySelector( '#categorias' )
-
-
-function pintarProductos ( lista ) {
-    sectionProductos.innerHTML = ''
-    lista.forEach( producto => pintarUnProducto( producto, sectionProductos ) );
+const sectionArticulos = document.querySelector( 'section .flex' );
+const selectorCategorias = document.querySelector( '#category' )
+const cantidadCarrito = document.querySelector( '.carrito p' );
+let carrito = new Array();
+if ( localStorage.getItem( 'carrito' ) !== null ) {
+    carrito = JSON.parse( localStorage.getItem( 'carrito' ) )
+    cantidadCarrito.innerText = carrito.length
 }
 
-function pintarUnProducto ( producto, dom ) {
-    let article = document.createElement( 'article' )
-    let button = document.createElement( 'button' )
-    let figure = document.createElement( 'figure' )
-    let img = document.createElement( 'img' )
-    let h2 = document.createElement( 'h2' )
-    let div = document.createElement( 'div' )
-    let pPrice = document.createElement( 'p' )
-    let pCategory = document.createElement( 'p' )
 
-    article.classList.add( 'producto' )
-    button.innerText = 'Añadir al carrito'
-    img.src = producto.image
-    img.alt = producto.title
-    h2.innerText = producto.name
-    pPrice.innerText = producto.price
-    pCategory.innerText = producto.category
+function printProducts ( pData ) {
+    sectionArticulos.innerHTML = "";
+    pData.forEach( product => {
+        printOneProduct( product, sectionArticulos )
+    } );
+}
 
-    figure.appendChild( img )
-    div.append( pPrice, pCategory )
-    article.append( button, figure, h2, div )
-    dom.appendChild( article )
+function printOneProduct ( pProduct, pDom ) {
+
+    const article = document.createElement( 'article' );
+    const button = document.createElement( 'button' );
+    button.innerText = 'Añadir a carrito';
+    button.dataset.id = pProduct.id;
+    //le añadiremos un evento al button
     button.addEventListener( 'click', addCarrito )
+    article.innerHTML = `<small>${ pProduct.category }</small>
+                         <h3>${ pProduct.title }</h3>
+                        <figure>
+                            <img src="${ pProduct.image }">
+                        </figure>
+                         <p>Precio: ${ pProduct.price } </p>`
+
+    article.appendChild( button )
+    pDom.appendChild( article );
 }
 
-function llenarSection ( list ) {
-    const listaCategorias = list.results.map( producto => producto.category )
-    let resultado = [ ...new Set( listaCategorias ) ]
+async function addCarrito ( event ) {
+    let id = event.target.dataset.id;
+    let productoCarrito = await getProduct( id );
 
-    for ( let categoria of resultado ) {
-        let option = document.createElement( 'option' )
-        option.value = categoria.toLowerCase()
-        option.innerText = categoria
-        selectFiltro.appendChild( option )
-        selectFiltro.addEventListener( 'change', pintarPorCategoria )
+    //tengo que guardarlo en el localstorage
+    //voy a comprobar que localstorage no tiene datos en memoria
+    if ( localStorage.getItem( 'carrito' ) !== null ) {
+        carrito = JSON.parse( localStorage.getItem( 'carrito' ) )
     }
+    carrito.push( productoCarrito );
+    cantidadCarrito.innerText = carrito.length
+    //una vez que he añadido el nuevo producto al carrito tengo que volver a guardar el array en el localstorage
+
+    localStorage.setItem( 'carrito', JSON.stringify( carrito ) )
+
 }
 
-function pintarPorCategoria ( event ) {
-    getCategorias( event.target.value, api )
+function printCategories ( pCategorias ) {
+    pCategorias.forEach( categoria => {
+        selectorCategorias.innerHTML += `<option value="${ categoria }">${ categoria }</option>`
+    } )
+    selectorCategorias.addEventListener( 'change', filterByCategoria )
 }
 
-function addCarrito ( event ) {
-    alert( 'Añadido al carrito' )
+function filterByCategoria ( event ) {
+    let categoria = event.target.value;
+    getProductsByCategoria( categoria );
 }
