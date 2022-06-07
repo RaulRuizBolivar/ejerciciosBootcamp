@@ -1,0 +1,48 @@
+.hero{
+    background-image: url(../images/bosque.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.btn {
+	color: black;
+	padding: .5rem 1rem;
+	border-radius: 0rem;
+	transition: color .5s ease-in-out,background-color .5s ease-in-out,border-color .5s ease-in-out,box-shadow .5s ease-in-out;
+}
+.btn-outline-light {
+	color: white;
+	border-color: white;
+}
+.h1, h1 {
+	font-size: 4em;
+    font-weight: 300;
+}
+.h2, h2{
+    font-size: 3em;
+    font-weight: bold;
+}
+hr {
+	margin: 1rem auto;
+    border-bottom: 1px solid black;
+	opacity: 1;
+    width: 75px;
+}
+.fs-6 {
+	font-size: .8rem !important;
+}
+.card-img, .card-img-bottom, .card-img-top {
+	width: 60%;
+}
+.img-fluid {
+	width: 100%;
+}
+.bg-light {
+	--bs-bg-opacity: 1;
+	background-color: #EFEEF0 !important;
+}
